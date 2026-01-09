@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PMS Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", "Segoe UI", sans-serif;
+        }
+
+        /* ===== BACKGROUND ===== */
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1200px;
+        }
+
+        /* ===== 3D CARD ===== */
+        .login-card {
+            width: 380px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border-radius: 18px;
+            padding: 35px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+            transform-style: preserve-3d;
+            transition: transform 0.6s ease, box-shadow 0.6s ease;
+        }
+
+        .login-card:hover {
+            transform: rotateY(8deg) rotateX(6deg) scale(1.03);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+        }
+
+        /* ===== TITLE ===== */
+        .login-card h2 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #ffffff;
+            font-size: 26px;
+            letter-spacing: 1px;
+        }
+
+        .login-card p {
+            text-align: center;
+            margin-bottom: 28px;
+            color: #cfd8dc;
+            font-size: 14px;
+        }
+
+        /* ===== INPUTS ===== */
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 6px;
+            color: #e0f7fa;
+            font-size: 14px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            background: rgba(255, 255, 255, 0.25);
+            color: #fff;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .input-group input::placeholder {
+            color: #e0e0e0;
+        }
+
+        .input-group input:focus {
+            background: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 0 2px #00e5ff;
+        }
+
+        /* ===== BUTTON ===== */
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #00e5ff, #00b0ff);
+            color: #003b44;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 229, 255, 0.6);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer-text {
+            margin-top: 22px;
+            text-align: center;
+            font-size: 13px;
+            color: #b0bec5;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 420px) {
+            .login-card {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-card">
+        <h2>Patient Management System</h2>
+        <p>Secure Login Portal</p>
+
+        <!-- Servlet Ready -->
+        <form action="./login" method="post">
+
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Enter username" required>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Enter password" required>
+            </div>
+
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+
+        <div class="footer-text">
+            © 2026 PMS • Self-Led Project
+        </div>
+    </div>
+
+</body>
+</html>
